@@ -9,12 +9,14 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @SequenceGenerator(name="seq_marca_produto", sequenceName = "seq_marca_produto", allocationSize = 1, initialValue = 1)
+
 public class marcaProduto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_marca_produto")
-    private long id;
+    private Long id;
 
+    @Column(nullable = false)
     private String nomeDesc;
 
 }
