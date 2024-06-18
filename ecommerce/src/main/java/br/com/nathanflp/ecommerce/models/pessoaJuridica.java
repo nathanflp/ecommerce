@@ -1,4 +1,4 @@
-package br.com.nathanflp.ecommerce.domain;
+package br.com.nathanflp.ecommerce.models;
 
 import jakarta.persistence.*;
 
