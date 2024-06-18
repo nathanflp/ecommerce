@@ -40,6 +40,7 @@ public class endereco implements Serializable {
     @JoinColumn(name="pessoa_id",nullable = false,foreignKey = @ForeignKey(value = ConstraintMode.CONSTRAINT, name = "pessoa_fk"))
     private pessoa pessoa;
 
+    @Enumerated(EnumType.STRING)
     private tipoEndereco tipoEndereço;
 
 
