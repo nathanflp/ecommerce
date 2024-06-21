@@ -18,6 +18,7 @@ public class avaliacaoProduto {
 
     private String descricao;
 
+    @Column(nullable = false)
     private Integer nota;
 
     @ManyToOne(targetEntity = pessoa.class)

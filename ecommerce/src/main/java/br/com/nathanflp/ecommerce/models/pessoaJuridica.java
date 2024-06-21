@@ -10,9 +10,6 @@ public class pessoaJuridica extends pessoa {
 
         private static final long serialVersionUID= 1l;
 
-        @PrimaryKeyJoinColumn(name = "id")
-        private Long id;
-
         @Column(nullable = false)
         private String cnpj;
 

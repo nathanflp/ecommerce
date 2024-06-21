@@ -24,13 +24,19 @@ public class usuario implements UserDetails {
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "seq_usuario")
     private Long id;
 
+    @Column(nullable = false)
     private String login;
 
+    @Column(nullable = false)
     private String senha;
 
+    @Column(nullable = false)
     @Temporal(TemporalType.DATE)
     private Date data_atua_senha;
 
+    @ManyToOne
+    @JoinColumn(name="pessoa_id",nullable = false,foreignKey = @ForeignKey(value = ConstraintMode.CONSTRAINT, name = "pessoa_fk"))
+    private pessoa pessoa;
 
     @OneToMany
     @JoinTable(name = "usuarios_acesso", uniqueConstraints = @UniqueConstraint (columnNames = {"usuario_id", "acesso_id"} ,

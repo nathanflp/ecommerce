@@ -10,12 +10,10 @@ public class pessoaFisica extends pessoa {
 
     private static final long serialVersionUID= 1l;
 
-    @PrimaryKeyJoinColumn(name = "id")
-    private Long id;
-
     @Column(nullable = false)
     private String cpf;
 
+    @Column(nullable = false)
     @Temporal(TemporalType.DATE)
     private Date data_nascimento;
 

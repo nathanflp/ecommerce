@@ -20,7 +20,12 @@ public class cupDesc {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_cup_desc")
     private Long id;
 
+    @Column(nullable = false)
     private String codDesc;
+
+    @Column(nullable = false)
+    @Temporal(TemporalType.DATE)
+    private Date dataValidade;
 
     private BigDecimal valorRealDesc;
 

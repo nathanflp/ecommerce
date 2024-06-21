@@ -13,8 +13,6 @@ import java.util.Date;
 @Entity
 @SequenceGenerator(name = "seq_contaReceber", sequenceName = "seq_contaReceber", allocationSize = 1,initialValue = 1)
 @Table(name="contaPagar")
-@Data
-@NoArgsConstructor
 
 public class contaPagar implements Serializable {
 
@@ -24,21 +22,24 @@ public class contaPagar implements Serializable {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_contaReceber")
     private Long id;
 
+    @Column(nullable = false)
     private String descricao;
 
+    @Column(nullable = false)
     private BigDecimal valoTotal;
 
     private BigDecimal valorDesconto;
 
+    @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private statusContaPagar status;
 
     @Temporal(TemporalType.DATE)
     private Date dtPagamento;
 
+    @Column(nullable = false)
     @Temporal(TemporalType.DATE)
     private Date dtVencimento;
-
 
     @ManyToOne(targetEntity = pessoa.class)
     @JoinColumn(name="pessoa_id", nullable = false,

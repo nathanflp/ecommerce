@@ -16,10 +16,13 @@ public class notaFiscalVenda {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_nota_fiscal_venda")
     private Long id;
 
-    private String number;
+    @Column(nullable = false)
+    private String numero;
 
+    @Column(nullable = false)
     private String serie;
 
+    @Column(nullable = false)
     private String tipo;
 
     @OneToOne
@@ -27,10 +30,10 @@ public class notaFiscalVenda {
     foreignKey = @ForeignKey(value = ConstraintMode.CONSTRAINT, name = "venda_compra_loja_virt_fk"))
     private vendaCompraLojaVirtual vendaCompraLojaVirtual;
 
-    @Column(columnDefinition = "text")
+    @Column(columnDefinition = "text",nullable = false)
     private String xml;
 
-    @Column(columnDefinition = "text")
+    @Column(columnDefinition = "text",nullable = false)
     private String pdf;
 
 }

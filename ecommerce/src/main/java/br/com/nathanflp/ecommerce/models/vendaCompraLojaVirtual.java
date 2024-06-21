@@ -49,17 +49,21 @@ public class vendaCompraLojaVirtual {
     private notaFiscalVenda notaFiscalVenda;
 
     @ManyToOne
-    @JoinColumn(name="cup_desc_id",nullable = false,
+    @JoinColumn(name="cup_desc_id",
     foreignKey = @ForeignKey(value = ConstraintMode.CONSTRAINT, name = "cup_desc_fk"))
     private cupDesc cupDesc;
 
+    @Column(nullable = false)
     private BigDecimal valorFrete;
 
+    @Column(nullable = false)
     private Integer diaEntrega;
 
+    @Column(nullable = false)
     @Temporal(TemporalType.DATE)
     private Date dataVenda;
 
+    @Column(nullable = false)
     @Temporal(TemporalType.DATE)
     private Date dataEntrega;
 

@@ -18,6 +18,7 @@ public class formaPagamento {
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "seq_formaPagamento")
     private Long id;
 
+    @Column(nullable = false)
     private String descricao;
 
 }
