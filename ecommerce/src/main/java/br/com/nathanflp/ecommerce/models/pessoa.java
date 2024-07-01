@@ -24,6 +24,9 @@ public abstract class pessoa implements Serializable {
     private Long id;
 
     @Column(nullable = false)
+    private String tipoPessoa;
+
+    @Column(nullable = false)
     private String nome;
 
     @Column(nullable = false)
