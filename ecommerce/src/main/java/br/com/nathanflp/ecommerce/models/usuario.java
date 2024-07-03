@@ -3,10 +3,7 @@ package br.com.nathanflp.ecommerce.models;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
 
-import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
@@ -17,7 +14,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 
-public class usuario implements UserDetails {
+public class usuario{
 
 
     @Id
@@ -50,38 +47,4 @@ public class usuario implements UserDetails {
 
     List<acessos> acessos;
 
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return this.acessos;
-    }
-
-    @Override
-    public String getPassword() {
-        return this.senha;
-    }
-
-    @Override
-    public String getUsername() {
-        return this.login;
-    }
-
-    @Override
-    public boolean isAccountNonExpired() {
-        return true;
-    }
-
-    @Override
-    public boolean isAccountNonLocked() {
-        return true;
-    }
-
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return true;
-    }
-
-    @Override
-    public boolean isEnabled() {
-        return true;
-    }
 }
